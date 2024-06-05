@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    
+    <script>
+        // function myGreeting() {
+        //     let number = 5;
+        //     return number; 
+        // }
+
+        // let funcReturn = myGreeting();
+        // console.log(funcReturn);
+
+        function makeAdverb(word) {
+            return word + "ly";
+        }
+        let newWord = makeAdverb("love");
+        console.log(newWord);
+
+        let persons = [
+            ["alice", 23, "Doctor"],
+            ["Bob", 28, 'Plumber'],
+            ["Charlie", 31, "Racecar Driver"],
+            ["Diane", 34, "Astronaught"]
+        ]
+        console.log(
+            "Charlie's age is:", persons[2][1]
+        );
+        console.log(
+            "Bob is a", persons[1][2]
+        );
+        for (let i = 0; i < persons.length; i++){
+            console.log(persons[i][0], "is a ", persons[i][2]);
+        }
+
+    </script>
+
+</body>
+</html>

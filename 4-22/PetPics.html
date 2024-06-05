@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(28, 28, 255);
+            margin: 0;
+
+        }
+
+        svg {
+            position: absolute;
+            top: -13rem;
+            left: 30rem;
+            transform: scale(.8);
+        }
+
+        .background {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        svg path {
+            fill: orangered;
+        }
+
+        .content {
+            position: absolute;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content div {
+            outline: 1px solid white;
+            width: 80%;
+            height: 80%;
+            padding: 4rem;
+        }
+
+        #left h1 {
+            display: flex;
+            flex-direction: column;
+            font-family: "Titan One", sans-serif;
+            font-weight: 400;
+        }
+
+        button {
+            padding: .75rem 2rem;
+            min-width: 15rem;
+            background-color: orangered;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+            height: 20rem;
+            width: 20rem;
+
+        }
+
+        img {
+            background-color: white;
+            min-height: 20rem;
+            min-width: 20rem;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div id="left">
+            <h1>Cute dogs</h1>
+            <button>Random cute dog</button>
+        </div>
+        <div id="right">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="background">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FA4D56"
+                d="M37.7,-59.8C45.4,-53.6,45.8,-37.4,51.2,-23.9C56.5,-10.4,66.9,0.4,68.9,12.3C70.8,24.1,64.4,37.2,53.9,43.4C43.4,49.7,28.8,49.1,16,51.6C3.1,54.1,-8,59.6,-20.1,59.9C-32.2,60.3,-45.4,55.5,-55.9,46.6C-66.5,37.8,-74.5,24.8,-79.1,9.8C-83.8,-5.2,-85,-22.3,-77.8,-34.3C-70.5,-46.4,-54.6,-53.3,-40.2,-56.4C-25.8,-59.5,-12.9,-58.8,1,-60.4C15,-62,30,-65.9,37.7,-59.8Z"
+                transform="translate(100 100)" />
+        </svg>
+    </div>
+
+    <script>
+        const imgElem = document.querySelector(".imgWrapper img");
+        function getDog() {
+            const xhrStuff = new XMLHttpRequest();
+            xhrStuff.addEventListener("load", () => {
+                console.log(xhrStuff.response);
+                const JSON.parse(xhrStuff.responseText); // turn JSON string into object
+                console.log("RESPONSEOBJ")
+            });
+            xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+            xhrStuff.send();
+        }
+        getDog();
+    </script>
+
+    
+
+
+
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

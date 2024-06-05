@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        #carousel {
+            width: 60rem;
+            height: 15rem;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            position: relative;
+            /* white-space: nowrap; */
+
+        }
+
+        .slider {
+            width: 300rem;
+            height: 100%;
+            overflow-x: scroll;
+            transform: translateX(-20rem);
+        }
+
+        .horse {
+            display: inline-block;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 20rem;
+            height: 100%;
+            overflow: hidden;
+            padding: 1rem;
+            color: white;
+        }
+
+        .horse h3 {
+            font-weight: bold;
+            text-shadow: 0px 0px 4px black;
+            margin: 10rem 0 0 1rem;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 5rem;
+            left: .25rem;
+            z-index: 99;
+            width: 2rem;
+            fill: rgba(255, 255, 255, .6);
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0px 0px 4px black;
+        }
+
+        .arrow.right {
+            left: 57.75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+        <div class="arrow left">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+        </div>
+        <div class="arrow right">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+            </svg>
+        </div>
+        <div class="slider"></div>
+
+    </div>
+    <script>
+        const allImages = [
+            {
+                caption: "White and gray",
+                url: "cats/cat1.jpeg"
+            },
+            {
+                caption: "Orange yawning",
+                url: "cats/cat2.jpeg"
+            },
+            {
+                caption: "Default with green eyes",
+                url: "cats/cat3.jpeg"
+            },
+            {
+                caption: "Black",
+                url: "cats/cat4.jpeg"
+            },
+            {
+                caption: "Default with yellow eyes",
+                url: "cats/cat5.jpeg"
+            }
+        ];
+
+        const sliderElem = document.querySelector(".slider");
+        const leftArrow = document.querySelector(".arrow.left");
+        const rightArrow = document.querySelector(".arrow.right");
+
+
+
+        // allImages.forEach(img => {
+        function InsertNewHorse(newHorse) {
+            newDiv.className = "horse";
+            newDiv.style.backgroundImage = `url("${img.url}")`;
+
+            const newH = document.createElement("h3");
+            newH.innerHTML = img.caption;
+            newDiv.appendChild(newH);
+
+            sliderElem.appendChild(newDiv);
+        }
+        for (let i = 0; i < allImages.length - 1; i++) {
+            const img = allImages[i];
+            insertNewHorse(img);
+        }
+        const newDiv = document.createElement("div");
+
+        leftArrow.addEventListener("click", () => {
+            const origTranslate = sliderElem.style.transform;
+            const posTx = origTranslate.indexOf
+            if (origTranslate.indexOf("translateX") !== -1) {
+
+            }
+            sliderElem.style.transform = "translateX(-20rem)"
+        });
+
+        rightArrow.addEventListener("click", () => {
+            sliderElem.style.transform = "translateX(20rem)"
+        });
+
+    </script>
+
+    <div class="horse">
+        <h3>Fancy cat.</h3>
+    </div>
+</body>
+
+</html>

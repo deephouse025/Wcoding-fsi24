@@ -1,0 +1,13 @@
+h1{
+    font-style: uppercase;
+    font-family: monospace;
+    text-align: center;
+    font-weight: 100;
+    size: 40px;
+    letter-spacing: 20px;
+    text-decoration: underline wavy plum;
+
+}
+p{
+    color: #7469B6
+}

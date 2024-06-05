@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send POST Messages</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="output"></div>
+
+    <script>
+        fetch("https://dog.ceo/api/breeds/image/random/get?name='Alice'&color='red'", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(stuff)
+        })
+        .then(res => res.json())
+        .then(res => {
+            const imgUrl = res.message;
+            const newImt = document.createElement("img");
+            newImg.src=imgUrl;
+            newImg.alt="random dog";
+
+            document.querySelector(".output").appendChild(newImg)
+        })
+    </script>
+
+</body>
+</html>

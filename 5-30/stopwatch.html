@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body{
+            background-color: rgb(219, 219, 219)
+        }
+        .outputBox{
+            width: 50%;
+            height: 100px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 10%;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+        .buttonBox{
+            display: flex;
+            justify-content: space-evenly;
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+            margin-top: 5%;
+        }
+        button{
+            /* flex: 1; */
+            display: inline-block;
+            border: 1px solid white;
+            border-radius: 10px;
+            width: 100px;
+            height: 50px;
+        }
+        .start{
+            background-color: rgba(0, 201, 0, 0.512);
+        }
+        .stop{
+            background-color: rgba(255, 76, 76, 0.612);
+        }
+    </style>
+</head>
+<body>
+    <div class="outputBox">
+            <!-- time will be outputted here -->
+    </div>
+    <div class="buttonBox">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="reset">Reset</button>
+    </div>
+
+    <script>
+        let start = document.querySelector(".start");
+        let stop = document.querySelector(".stop");
+        let reset = document.querySelector(".reset")
+        let outputBox = document.querySelector(".outputBox")
+        let running = false;
+        let time_elapsed = 0;
+
+
+
+        //push time_elapsed into html's output box 
+        // outputBox.innerHTML = time_elapsed;
+
+        start.addEventListener("click", ()=> {
+
+
+        setInterval(timer, 10);
+
+        function timer(){
+            if (time_elapsed < 1500){
+                time_elapsed ++;
+                outputBox.innerHTML = time_elapsed;
+            }
+        }
+
+
+        // function startClock() {
+        //     const currTime = Date.now
+        //     const startTime = 
+        // }
+
+        // function timer(){
+        //     if time_elapsed < 10{
+        //         console.log(time)
+        //         time ++;
+        //     }
+            
+        // }
+
+        // start.addEventListener("click", ()=> {
+
+        //     setInterval(timer, 1000)
+        // })
+
+
+        
+    </script>
+</body>
+</html>

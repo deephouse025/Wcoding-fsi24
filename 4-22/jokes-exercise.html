@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+    <style>
+        body {
+            background-color: rgb(176, 226, 255);
+        }
+
+        h1,
+        h3 {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            position: absolute;
+            left: 680px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Joke Zone</h1>
+
+
+
+    <h3>Setup:</h3>
+    <p class="setup"></p>
+
+    <h3>Punchline:</h3>
+    <p class="punchline"></p>
+
+    <button>New Joke</button>
+
+
+
+    <script>
+
+        const setupElem = document.querySelector("p.setup");
+        const punchlineElem = document.querySelector("p.punchline");
+
+        function getJoke() {
+            const xhrJoke = new XMLHttpRequest();
+            xhrJoke.open("GET", "http://192.168.3.16:3000/random_joke");
+            xhrJoke.addEventListener("load", () => {
+                let joke = (JSON.parse(xhrJoke.responseText));
+                setupElem.innerHTML = joke.setup;
+
+
+            });
+
+            xhrJoke.send();
+            
+            xhrJoke.open("GET", "http://192.168.3.16:3000/random_joke");
+            xhrJoke.addEventListener("click", () => {
+                let joke = (JSON.parse(xhrJoke.responseText));
+                // document.append()
+                setupElem.innerHTML = joke.punchline;
+
+            });
+            xhrJoke.send();
+
+            
+        }
+        getJoke();
+
+        // function reloader (){
+        //     location.reload();
+        // }
+        // reloader();
+
+
+        // resetElem.addEventListener("click", "button"){
+        //     if (true){
+
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>

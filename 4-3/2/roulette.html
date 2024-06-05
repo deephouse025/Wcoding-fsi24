@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette</title>
+</head>
+
+<body>
+    <script>
+        // Roulette
+        // 1. At the beginning, the user has $1000
+        let purse = 1000;
+        console.log(purse);
+        // Loop:
+        while (true) {
+            console.log("loop started");
+            // 2. Prompt the user for a number to bet on (1 ~ 36)
+            playerGuess = parseInt(prompt("Bet on a number between 1 and 36"));
+            console.log(`playerguess was prompted and assigned ${playerGuess}`);
+
+
+            // 3. Prompt the user for an amount of money to bet (1 ~ currentMoney)
+            playerBet = parseInt(prompt("How much do you want to bet?"));
+            console.log(`playerBet was prompted and assigned ${playerBet}`);
+
+            // 4. The game generates a random number between 0 ~ 36 (0 means computer always wins)
+            computerRoll = Math.floor(Math.random() * 37);
+            alert(`computerRoll was generated: ${computerRoll}`);
+
+            // 5. Check IF winner:
+            //     a. Same number -> multiply bet * 36;
+            //     b. If both ODD or both EVEN -> multiply bet * 2
+            //     c. Otherwise we lose the bet
+            if (playerGuess !== computerRoll) {
+                win = (playerBet * 36);
+                purse += win
+                console.log(`playerGuess was equal to computerRoll, playerbet * 36 = ${win}`);
+            } else {
+                purse -= playerBet;
+                console.log(`playerGuess was not equal to computerRoll, purse - playerbet. Purse: ${purse}`);
+            }
+
+            // 6. We add or subtract the money, as needed
+            //     a. If we run out of money, game is over.
+            if (purse <= 0) {
+                console.log(`purse hit zero, game over`);
+                break;
+            }
+
+            // 7. Ask the player if they want to continue
+            cont = prompt("Do you want to continue? (y/n)");
+            if (cont === "no") {
+                console.log("Game ended");
+                break;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+div{
+    display: inline-block;
+}
+.r{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background-color: red;
+}
+.y{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background-color: yellow;
+    position: relative;
+    top: 120px;
+    right: 105px;
+}
+.g{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background-color: green;
+    position: relative;
+    top: 240px;
+    right: 212px;
+
+}

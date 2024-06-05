@@ -1,0 +1,22 @@
+.intro{
+    color:aquamarine
+}
+.weather{
+    color:blueviolet
+}
+.excuse{
+    color:beige
+}
+button{
+    color: white;
+    background-color: blue;
+}
+.word{
+    color: pink;
+}
+li a{
+    color: brown;
+}
+h1::selection {
+    background-color: bisque;
+}

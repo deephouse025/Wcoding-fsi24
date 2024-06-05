@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>/dateinfo</legend>
+        <form id="dateinfo">
+            <label>
+                Please enter a date in yyyy-mm-dd format: 
+                <input id="dateinfoInput">
+            </label>
+            <button>Send</button>
+        </form>
+    </fieldset>
+
+    <script>
+        document.querySelector("#dateinfo").addEventListener("submit", evt => {
+            evt.preventDefault()
+
+            fetch("/dateinfo" {
+                method: "get"
+            })
+        })
+    </script>
+</body>d
+</html>

@@ -1,0 +1,15 @@
+img{
+    width: 30%;
+    margin: 16px;
+}
+img:hover{
+    transform: scale(105%);
+}
+
+nav{
+    font-weight: bold;
+    padding-left: 25px;
+    padding: 25px;
+    border-bottom: solid gray 2px;
+    width: 20%;
+}

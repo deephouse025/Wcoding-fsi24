@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Exercise 3</title>
+</head>
+
+<body>
+    <!-- <p>
+        Using only JS, generate the necessary HTML to re-create the text in the image:<br>
+        <img src="./js-dom-exercise3-1.png" /><br>
+        The text includes parts in bold and parts that are anchor links to remote websites. The "standards organization" text should link to https://en.wikipedia.org/wiki/Standards_organization and the "World Wide Web" text should link to https://en.wikipedia.org/wiki/World_Wide_Web_Consortium on your finished result.
+    </p>
+    <hr>
+    <p>
+        Using the following array:
+    </p>
+    <pre>
+        let languages = ['JavaScript', 'Node', 'Vue', 'React'];
+    </pre>
+    Create an unordered list with only JS that will appear in a browser like the following image:<br>
+    <img src="./js-dom-exercise3-2.png">
+    <p></p>
+    <hr>
+    <p>
+        Create an HTML file uploading section using only JS that will appear like the following image:<br>
+        <img src="./js-dom-exercise3-3.png"><br>
+        Note that the "No file chosen" text is automatically produced by the input element.
+    </p> -->
+    <!-- <p>the <strong>World Wide Web Consortium </strong> abbreviated as acronym <strong>W3C </strong> is a <a href="">standards organization </a> </p> -->
+    <script>
+
+ 
+        let newLM = document.createElement("p");
+        let strong1 = document.createElement("strong");
+        strong1.innerHTML = "World Wide Web Consortium";
+        let strong2 = document.createElement("strong");
+        strong2.innerHTML = "W3C";
+        let link1 = document.createElement("a");
+        link1.href = "https://en.wikipedia.org/wiki/Standards_organization";
+        link1.textContent = "standards organization";
+        let link2 = document.createElement("a");
+        link2.href = "https://en.wikipedia.org/wiki/World_Wide_Web_Consortium";
+        link2.textContent = "World Wide Web";
+
+        document.body.append("the ", strong1, " abbreviated as acronym ", strong2, " is a ", link1, " non-profit organization responisble for promoting the compatibility of the ", link2);
+
+
+
+
+        document.body.append("Languages based on ECMAscript");
+        let languages = ['JavaScript', 'Node', 'Vue', 'React'];
+        document.body.append(languages);
+
+        let languageList = document.createElement("ul");
+
+        for (i = 0; i < languages.length; i++){
+           let li
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

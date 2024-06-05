@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+</head>
+
+<body>
+    <script src="letters.js"></script>
+    <script src="people.js"></script>
+    <script type="text/javascript">
+        // 1. Create an array and put these colors in it:
+        // fuchsia, lime, grey, magenta, teal
+
+        let colors = ["fuchsia", "lime", "grey", "magenta", "teal"];
+        console.log(colors);
+
+        // 2. Use array functions to remove the 3 last colors and add 2 new colors at the beginning of the array
+
+        colors.splice(2, 3);
+        console.log(colors);
+        colors.splice(0, 0, "maroon", "indigo");
+        console.log(colors);
+
+        // 3. Reverse this array
+
+        colors.reverse();
+        console.log("3: ", colors);
+
+        // 4. Find all vowels in the lotsOfLetters array provided in the letter.js file and extract them into another array.
+
+        // let lotsOfVowels = [];
+        // let vowelList = ["a", "e", "i", "o", "u"];
+        // for (let i = 0; i < lotsOfLetters.length; i++){
+        //     let thisLetter = lotsOfLetters[i];
+        //     if (-1 !== vowelList.indexOf(thisLetter)){
+        //         lotsOfVowels.push(thisLetter);
+        //     }
+        // }
+        // console.log(lotsOfVowels);
+
+
+
+
+
+
+
+
+
+
+        // 5. Remove every "z" in the lotsOfLetters array
+
+        // let noZ = [];
+        // for (i = 0; i < lotsOfLetters.length; i++){
+        //     let thisLetter = lotsOfLetters[i];
+        //     if (thisLetter !== "z"){
+        //         noZ.push(thisLetter);
+        //     }
+        // }
+        // console.log(noZ); 
+
+        
+
+        // 6. Display all the data in the given array in the following format:
+
+
+        
+
+
+
+        // "Chris" 19
+        // "Georges" 33
+        // ...
+        // const kids = [
+        //     ["Chris", 19],
+        //     ["Georges", 33],
+        //     ["Dustin", 29],
+        //     ["Wendy", 35],
+        // ];
+
+        // BONUS:
+        // In the lotsOfPeople array provided in the people.js file:
+        // - Count how many people have a name starting with the letter "E"
+        // - Count how many people are over 50 years old
+        // - Remove the people under 21 from the array
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In class combobox example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            font-family: sans-serif;
+        }
+        input {
+            font-size: 1.25rem;
+            padding: 0.5rem .5rem;
+            min-width: 17rem;
+        }
+        button {
+            background-color: cornflowerblue;
+            color: white;
+            font-weight: bold;
+            font-size: 1.25rem;
+            padding: .7rem 1.5rem;
+            margin-left: .5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        .matches {
+            font-size: 1.5rem;
+            min-width: 20rem;
+            margin: 0.5rem;
+            min-height: 20rem;
+            overflow-y: scroll;
+        }
+        ul li {
+            list-style: none;
+        }
+
+        ul li:focus {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        .info {
+            min-width: 23rem;
+            min-height: 20rem;
+            padding: 5rem;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="inputArea">
+        <input id="userInput">
+        <button>Go</button>
+    </div>
+    <ul class="matches">
+    
+    </ul>
+
+    <script>
+
+        const xhrSchools = new XMLHttpRequest();
+        xhrSchools.open("GET", "http://universities.hipolabs.com/search?country=United+States")
+        xhrSchools.addEventListener("load", () => {
+            // console.log("RES: ", xhrSchools.responseText)
+            let jsonObj = JSON.parse(xhrSchools.responseText);
+            activeInput(jsonObj);
+        })
+        xhrSchools.send();
+
+        const inputElem = document.querySelector("input");
+        const matchesElem = document.querySelector(".matches");
+        const buttonElem = document.querySelector("button");
+        const infoElem = document.querySelector("")
+
+        
+
+
+            inputElem.addEventListener("input", () => {
+
+            inputElem.addEventListener("keyup", (evt) => {
+            let handleInputToMatch(evt) {}
+                if (evt.key === "ArrowDown") {
+
+                }
+            })
+        })
+
+        //add the event listeners. these are done after the schools are loaded
+        function activateInput(allSchools) {
+            inputElem.addEventListener("input", () => {
+                if (inputElem.value.length > 2) {
+                    let matchingSchoolNames = 
+                        // allSchools
+                        //     .filter(school => school.name.toLowerCase() === inputEleme.value.toLowerCase())
+                        //     .map(school => school.name);
+
+                        matchesElem.innerHTML = ""; //clear out old matches
+
+                        //add new matches
+                        matchesElem.style.display = 'block';
+                        allSchools
+                            .filter(school => school.name.toLowerCase().includes(inputElem.value.toLowerCase()))
+                            .forEach(school => {
+                                const newItem = document.createElement("li");
+                                newItem.innerHTML = school.name;
+                                matchesElem.appendChild(newItem);
+
+                                newItem.addEventListener("click", () => {
+                                    inputElem.value = school.name;
+                                    matchesElem.replaceChildren();
+                                    matchesElem.style.display = "none";
+                                })
+                            })
+
+                    
+                }
+            });
+
+            buttonElem.addEventListener("click", () => {
+                const details = 
+                allSchools
+                    .find(school => school.name.toLowerCase() === inputElem.value.toLowerCase())
+                if (details) {
+                    let newHtml = `<div>Name: ${details.name}</div>`;
+                    for (const link in details.web_pages) {
+                        newHtml += <div>Pages: <a href="${link}"</a></div>`
+                    }
+                    newHtml += 
+                }  
+            })
+        }
+    </script>
+
+</body>
+
+</html>

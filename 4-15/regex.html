@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+</head>
+
+<body>
+
+    <script>
+        const longStr = "Education: B Tech from Tier 1 college Years of Experience: 5 yrs Company: Dream11 Title/Level: SDE2 Location: Mumbai, India Base Salary: 50L INR Stocks: ESOPS 18LPA (vesting each year) Relocation/ Signing Bonus: "
+        let allWords = longStr.split(" ");
+        allWords = allWords.map(word => word.toLowerCase());
+
+        const symbols = /[.;()]/g;
+        allWords = allWords.map(word => word.replace(symbols, ""));
+
+        const countOfWords = {};
+
+        for (let word of allWords) {
+            if (!countOfWords.hasOwnProperty(word)) {
+                countOfWords[word] += 1;
+            }
+            else {
+                countOfWords[word] = 1;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

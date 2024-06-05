@@ -1,0 +1,30 @@
+div{
+    text-align: center;
+    margin: 0 auto;
+}
+.colorblock {
+    background-color: lightblue;
+    width: 900px;
+    height: 300px;}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    font-size: 8px;
+    color: :red;
+}
+
+/* xl */
+@media (max-width: 1280px) {}
+
+/* lg */
+@media (max-width: 960px) {
+}
+
+/* md */
+@media (max-width: 768px) {}
+
+/* sm */
+@media (max-width: 640px) {}
+
+/* xs */
+@media (max-width: 475px) {}

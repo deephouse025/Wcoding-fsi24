@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+nav{
+    text-align: center;
+    background-color: rgb(173, 216, 230);
+    height: auto;
+    
+}
+li{
+    display: inline-block;
+    padding: 20px;
+}
+li:hover{
+    background-color: rgb(188, 214, 223);
+}
+a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+
+}

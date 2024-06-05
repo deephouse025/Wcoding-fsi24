@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="cars.js"></script>
+    <script type="text/javascript">
+            // Create an object user with a firstName, a lastName, and an age.
+            // Then add 10 years to the age of the user.
+
+            let userA = {
+                fname: "Johnny",
+                lname: "Appleseed",
+                age: 36
+            }
+
+            userA.age += 10;
+            console.log(userA.age);
+
+            // Create two other user objects and group them together in a "users" variable.
+            // Then display in the console on a single line, all the users' fullnames.
+
+    
+                let userB = {
+                    fname: "Dan",
+                    lname: "Bro", 
+                    age: 31
+                }
+
+                let userC = {
+                    fname: "Chris",
+                    lname: "Sandwich",
+                    age: 22
+                }
+
+
+                let users = [
+                    userA,
+                    userB,
+                    userC
+                ];
+                console.table(users);
+
+
+            // Add a length property to all of your users that will return the length of their full name.
+
+            users.forEach(function (user)){
+                user.nameLength = (user.fname + user.lname).length
+            }
+            // Use the allVehicles array from the cars.js file and:
+            // Create a function that returns the cars that were produced the last 5 years.
+            // Then display manufacturer and model names of those newer cars.
+
+            // Sort all the vehicles by production year date.
+
+            // BONUS:
+            // Create a function that will convert an object into a array like this:
+            // {firstName: "Philippe", lastName: "Gross"} => [["firstName", "Philippe"], ["lastName", "Gross"]]
+
+            // Create a function that will compare two objects and display if they are equal or not.
+            // isEqual({a: 1, b: [1, 2]}, {a: 1, b: [1, 2]}) => true
+            // isEqual({a: 1, b: [1, 2]}, {a: 1, b: [1, 3]}) => false
+    </script>
+</body>
+
+</html>

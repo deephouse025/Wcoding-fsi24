@@ -1,0 +1,19 @@
+
+.b{
+    background: blue;
+    width: 300px;
+    height: 600px;
+    display: inline-block;
+}
+.w{
+    background: white;
+    width: 300px;
+    height: 600px;  
+    display: inline-block;  
+}
+.r{
+    background: red;
+    width: 300px;
+    height: 600px;
+    display: inline-block;
+}

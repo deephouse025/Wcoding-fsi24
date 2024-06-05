@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2rem;
+            min-height: 100vh;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .answer {
+            /* display: none; */
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="question"></div>
+    <div class="answer"></div>
+    <input id="searchStuff">
+
+    <script>
+        const qElem = document.querySelector(".question");
+        const aElem = document.querySelector(".answer");
+
+        const searchElem = document.querySelector("#searchStuff");
+        searchElem.addEventListener("input", () => {
+            console.log("SEARCH INPUT:", searchElem.value);
+        })
+        searchElem.addEventListener("keyup", () => {
+            console.log("SEARCH KEY:", searchElem.value);
+        })
+
+        function getQA() {
+            const newQuestion = "Hello?";
+            const newAnswer = "Greetings, earthling.";
+
+            qElem.innerHTML = newQuestion;
+            aElem.innerHTML = newAnswer;
+        }
+
+        getQA();
+
+        document.body.addEventListener("click", () => {
+            // aElem.style.display = "block";
+            aElem.style.visibility = "visible";
+        })
+        
+        </script>
+</body>
+</html>
+<!-- 
+Create a combo box input (https://en.wikipedia.org/wiki/Combo_box) using JS,
+without using third-party libraries. The combo box typically comprises of
+a text input and a list of matches. Also add a submit button beside the
+combo box input. There should be an area under the combo box to display more
+details about the combo box's matched selection.
+
+It will be used with a list of US universities pulled from a public API: -->
+
+<!-- (http://universities.hipolabs.com/search?country=United+States)
+
+The combo box should do the following:
+
+- Wait until the user types at least 3 characters before starting to search
+   through schools to display matches.
+- Display matches under the editable text input. The list of matches should
+   only appear when there are matches to show and should have a maximum
+   display size and show a scrollbar if the list gets too large to show in
+   your allotted space.
+- Clicking on a match in the list of matches will auto fill/replace the
+   text in the text input with the match that was clicked. This should also
+   remove or hide the list of matches.
+- Clicking on the submit button displays the school details in an area under
+   the combo box.
+- Only connect to the API to get the list of schools once and hold the list
+   locally, so you don't create too much network traffic and UI lag.
+
+
+BONUS: Have the combo box support key presses as follows:
+- The user should be able to navigate the matches list with the up and down
+   arrows. Show the current position in the list while navigating this way
+   by highlighting the list position. (eg. special background color, font
+   size, font weight, etc.)
+- Hitting the enter key while navigating the matches list will auto
+   fill/replace the text in the text input with the highlighted match. This
+   should also remove or hide the list of matches.
+- If the matches list is showing while the focus is on the text input, a down
+   arrow key will allow the user to start navigating the matches list.
+- If the user hits the enter key while the focus is on the text input, the
+   UI will behave as if the user submitted the text.
+ -->
+    <div class="box">
+        <div class="searchBar">
+            <input class="inputBox" type="text" placeholder="Enter a name of universities...">
+        </div>
+        <button>Search</button>
+        <div class="matchesBox"></div>
+    </div>
+
+    <script>
+        // create variables for the combo box and inputs
+        const inpuElem = document.querySelector('.inputBox'); // this is the variable for input field
+        const searchBtn = document.querySelector('button'); // declare a variable for the button
+        const result = document.querySelector('matchesBox'); // declare variable for the result to display what you search in the combo box
+
+        let collegeList;
+        function getUniversities (){
+            const apiList = new XMLHttpRequest();
+        apiList.open("GET", "http://universities.hipolabs.com/search?country=United+States");
+        apiList.addEventListener("load", () => {
+            // console.log(apiList.responseText);
+            console.log('Response:', apiList.response);
+            
+            // collegeList = JSON.parse(apiList.responseText);
+            collegeList = JSON.parse(apiList.response);
+        });
+        apiList.send();        
+    }
+    getUniversities();
+    
+    // Add event listener for input 
+
+
+
+     
+    </script>
+
+</body>
+
+</html>

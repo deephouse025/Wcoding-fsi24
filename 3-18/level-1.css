@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  border: 2px solid blue;
+  width: 800px;
+  background-color: rgb(204, 255, 255);
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+}
+li {
+  min-width: 104px;
+  text-align: center;
+  border: 2px solid black;
+  padding: 5px 40px;
+  font-size: 150px;
+  margin: 30px;
+  border-radius: 5px;
+  background-color: rgb(211, 209, 209);
+}
+
+@media (max-width: 800px) {
+  ul {
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50px;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggy home</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            background: rgba(0, 0, 255, 0.256);
+        }
+
+        .blogcard {
+            margin: 10px;
+            background-color: rgba(0, 128, 0, 0.271);
+            display: inline-block;
+            width: 30%;
+            min-height: 40%;
+            padding: 0;
+        }
+
+        .blogcard h5 {
+            height: 50px;
+            background-color: rgba(0, 0, 255, 0.178);
+        }
+
+        .createpostarea {
+            margin: 0 auto;
+            width: 30%;
+            height: 200px;
+            background-color: rgba(128, 0, 128, 0.315);
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: rgba(165, 42, 42, 0.292);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>BLOGGY.com</h2>
+    </div>
+    <div class="addpostarea"></div>
+    <div class="blogarea">
+        <div class="blogcard">
+            <h5 id="blogpost1">This is blog 1!</h5>
+            <p>Blah blah is blah blah! </p>
+            <a href="/Users/lukeschmit/Desktop/CS/Wcoding/In class/blog_project/blogpost.html">expand</a>
+        </div>
+        <div class="blogcard">
+            <h5>Blah blah and blah</h5>
+            <p>Blah blah is blah blah! </p>
+            <a href="">expand</a>
+        </div>
+        <div class="blogcard">
+            <h5>Blah blah and blah</h5>
+            <p>Blah blah is blah blah! </p>
+            <a href="">expand</a>
+        </div>
+        <div class="blogcard">
+            <h5>Blah blah and blah</h5>
+            <p>Blah blah is blah blah! </p>
+            <a href="">expand</a>
+        </div>
+        <div class="blogcard">
+            <h5>Blah blah and blah</h5>
+            <p>Blah blah is blah blah! </p>
+            <a href="">expand</a>
+        </div>
+    </div>
+
+    <div class="createpostarea">
+        Create a post:
+        <form id="createpost">
+            <input id="title" type="text" placeholder="Title: ">
+            <input id="tag" type="text" placeholder="Tag: ">
+            <input id="author" type="text" placeholder="Author: ">
+            <input id="content" type="text" placeholder="Text: ">
+            <button id="go">Click</button>
+        </form>
+    </div>
+
+
+    <script>
+        let title = document.querySelector("#title")
+        let tag = document.querySelector("#tag")
+        let author = document.querySelector("#author")
+        let content = document.querySelector("#content")
+        let go = document.querySelector("#go")
+
+
+        go.addEventListener("click", () => {
+            fetch("/bloginputs", {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    title: title.value,
+                    tag: tag.value,
+                    author: author.value,
+                    content: content.value
+                })
+            })
+                .then(res => res.text())
+                .then(res => console.log("RES:", res))})
+    </script>
+</body>
+
+</html>

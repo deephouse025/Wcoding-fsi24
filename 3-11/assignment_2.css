@@ -1,0 +1,13 @@
+section {
+    width: 500px;
+    height: 500px;
+    background-color:antiquewhite;
+   border: dashed red 3px;
+}
+p {
+    text-align: center;
+}
+button {
+    padding: 10px;
+    border-radius: 10px;
+}

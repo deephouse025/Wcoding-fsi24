@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions-exercise</title>
+    <script src="letters.js"></script>
+    <script src="people.js"></script>
+
+
+</head>
+
+<body>
+    <script>
+        // 1. Create a function that says hello to the person name provided as an argument.
+
+        // let name = prompt("What is your name?");
+
+        // function sayHi(name) {
+        //     if ((name === undefined) || (name.length === 0)) {
+        //         alert("Hello!");
+        //     } else { alert(`Hello, ${name}!`); }
+        // } 
+        // sayHi(name);
+
+
+
+
+
+        // 2. Create a function that will tell you if a provided year is a leap year or not.
+        // A year is a leap year if it is divisible by 4 but not 100, or else is divisible by 400.
+
+        // function yearChecker(yearChoice){
+        //     let isLeap = false;
+        //     if (((yearChoice % 4 === 0) && (yearChoice % 100 !== 0)) || (yearChoice % 400 === 0)){
+        //         isLeap = true;
+        //     }
+        //     return isLeap;
+        // }
+        // let firstYear = yearChecker(2000);
+
+
+        // console.log("2. Leap Year 2000: true:", yearChecker(2000));
+        // console.log("2. Leap Year 2003: false:", yearChecker(2003));
+        // console.log("2. Leap Year 2008: true:", yearChecker(2008));
+        // console.log("2. Leap Year 2012: true:", yearChecker(2012));
+        // console.log("2. Leap Year 2023: false:", yearChecker(2023));
+        // console.log("2. Leap Year 2024: true:", yearChecker(2024));
+
+
+
+
+
+        // 3. Create a function that will return all the vowels in an array of letters. It should return the vowels found as a new array.
+
+        // function vowelChecker(userInput) {
+        //     let vowelList = ["a", "e", "i", "o", "u"];
+        //     let allVowels = [];
+
+        //     for (i = 0; i < userInput.length; i++) {
+        //         let thisLetter = userInput[i];
+        //         if (vowelList.indexOf(thisLetter) !== -1) {
+        //             allVowels.push(thisLetter);
+        //         }
+        //     }
+        //     return allVowels;
+
+        // }
+
+
+        // console.log("3. Num vowels: ['e']:", vowelChecker(['e']));
+        // console.log("3. Num vowels: ['i', 'a', 'o', 'e']:", vowelChecker(['z', 'i', 'g', 'l', 'a', 'b', 'o', 'e']));
+        // console.log("3. Num vowels: ['i', 'i', 'i', 'e']:", vowelChecker(['v', 'i', 'q', 'i', 'i', 'e']));
+        // console.log("3. Num vowels: []:", vowelChecker(['z', 'g', 'l', 'b']));
+        // console.log("3. Num vowels: []:", vowelChecker([]));
+        // console.log("3. Num vowels: [u, o, o, a, o, i, i, e, u, i, o, e, e]:", vowelChecker(lotsOfLetters));
+
+
+
+
+        // 4. Create a function that takes an array of people and a name and will return back the age of that person.
+        // Use the lotsOfPeople array from the provided people.js file.
+
+
+        //     function getAgeOfPerson(lotsOfPeople, inputName) {
+        //         for (let i = 0; i < letsOfPeople.length; i++){
+        //             let name = lotsOfPeople[i][0];
+        //             let age = lotsOfPeople[i][1];
+        //             if (inputName === name){
+        //                 return age;
+        //             } 
+        //         }
+        //     }
+
+
+
+
+        // let nameChoice = prompt("Choose a person: ");
+
+        // for (i = 0; i < lotsOfPeople.length; i++){
+        //     thisName = lotsOfPeople[i][0];
+        //     if (nameChoice === thisName){
+        //         console.log(lotsOfPeople[i][1]);
+        //     }
+        // }
+
+
+
+
+
+        // 5. Create a function that take an array of people, a name, and a age and will add a new person into the lotsOfPeople array.
+        // Use the lotsOfPeople array from the provided people.js file.
+
+
+        function addPerson(name, age){
+            lotsOfPeople.push([name, age]);
+        }
+
+
+
+        // let newName = prompt("Please give a new name");
+        // let newAge = prompt("Please give an age for that name");
+
+        // function personAdder(newName, newAge) {
+        //     let newEntry = [newName, newAge];
+        //     lotsOfPeople.push(newEntry);
+        //     console.log(lotsOfPeople);
+        // }
+
+
+
+
+
+
+        // 6. Create a function that takes two arguments: an array of numbers and a multiplier.
+        // The function should update the array with each number multiplied by the multiplier parameter.
+        // Ex : [2,5,1,10] with multiplier 2 should update the array to [4,10,2,20]
+
+        let numbers = [2, 5, 1, 10];
+        let multiplier = parseInt(prompt("Enter a multiplier: "));
+        let answer = [];
+
+        function multiplierMachine (numbers, multiplier){
+            for (i = 0; i < numbers.length; i++){
+                if (multiplier) {
+                    numbers[i] = numbers[1] * multiplier;
+                }
+            }
+        } console.log(answer);
+
+        // 7. Create a function that will sort an array of people so the people are ordered by their age in numerical order.
+        // Use the lotsOfPeople array from the provided people.js file.
+        // Ex: [["Carolina", 28], ["Alex", 18], ["Georges", 31], ["Betty", 64]]
+        // becomes
+        // [["Alex", 18], ["Carolina", 28], ["Georges", 31], ["Betty", 64]]
+
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
