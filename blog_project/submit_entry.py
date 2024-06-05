@@ -22,7 +22,7 @@ def stuff():
     print("ONTWO:", title_key.value)
     return "DONE"
 
-
+# example changes made !
 
 # inserting new blog post
 # using variables to insert entry into db
